@@ -1,0 +1,96 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "campaign",
+        "command": [
+          "campaignid varchar(200)",
+          "campaignuuid char(36)",
+          "spectrometeruuid varchar(36)",
+          "muzzleuuid varchar(36)",
+          "campaigntitle varchar(128)",
+          "campaignabbr varchar(32)",
+          "version varchar(8)",
+          "orgid varchar(32)",
+          "substance varchar(24)",
+          "scanstate varchar(8)",
+          "sampling varchar(16)",
+          "class varchar(24)",
+          "spectrum varchar(16)",
+          "timeseries boolean",
+          "geographic boolean",
+          "profile boolean",
+          "info varchar (255)",
+          "PRIMARY KEY (campaignid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "sample",
+        "command": [
+          "sampleid varchar(164)",
+          "campaignuuid char(36) NOT NULL",
+          "sampleuuid char(36) NOT NULL",
+          "referenceuuid char(36)",
+          "samplename varchar(32)",
+          "sampleabbr varchar(16)",
+          "sampledate date NOT NULL",
+          "sampletime time DEFAULT '12:00:00'",
+          "createdate date",
+          "family varchar(32)",
+          "species varchar(32)",
+          "brand varchar(32)",
+          "version varchar(16)",
+          "info varchar (255)",
+          "samplesymboluuid char(36)",
+          "PRIMARY KEY (sampleid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "samplelocation",
+        "command": [
+          "campaignuuid char(36)",
+          "sampleuuid char(36)",
+          "longitude float",
+          "latitude float",
+          "mindepth float",
+          "maxdepth float",
+          "PRIMARY KEY (sampleuuid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "campaignprobes",
+        "command": [
+          "campaignuuid char(36)",
+          "probeuuid char(36)",
+          "PRIMARY KEY (campaignuuid,probeuuid)"
+        ]
+      }
+    }
+  ]
+}

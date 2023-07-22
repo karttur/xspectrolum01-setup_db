@@ -1,0 +1,41 @@
+# Install the default database schemas
+jsonsql/general_schema_v090_sql.json
+
+# Install campaign main tables
+jsonsql/general_campaign-main_v090_sql.json
+
+# Install campaign meta tables
+jsonsql/general_campaign-meta_v090_sql.json
+
+# Install reference spectra main and meta tables
+jsonsql/general_refspectra_main+meta_v090_sql.json
+
+# Install sensors tables
+jsonsql/general_sensors_v090_sql.json
+
+# Install light sources tables
+jsonsql/general_lights_v090_sql.json
+
+# Install spectrometer tables
+jsonsql/general_spectrometer_v090_sql.json
+
+# Install spetrcascan tables
+jsonsql/general_spectrascan_v090_sql.json
+
+# Install probeobs tables
+jsonsql/general_probeobs_v090_sql.json
+
+# Install support tables
+jsonsql/general_support_v090_sql.json
+
+# Add default records to support tables
+jsonsql/general_support_records_v090_sql.json
+
+# Install ancillary tables
+jsonsql/general_ancillary_v090_sql.json
+
+# Install processes
+jsonsql/general_processes_v090_sql.json
+
+# Add rootprocess and subprocess to processes table
+jsonsql/general_processes_records_v090_sql.json

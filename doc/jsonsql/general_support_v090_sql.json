@@ -1,0 +1,132 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectraunit",
+        "command": [
+          "label varchar(64)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectratype",
+        "command": [
+          "label varchar(16)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectrum",
+        "command": [
+          "label varchar(64)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "scanstate",
+        "command": [
+          "label varchar(16)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "campaign",
+        "table": "spectralight",
+        "command": [
+          "label varchar(16)",
+          "productid varchar(64)",
+          "voltage real",
+          "resistor integer",
+          "scantype varchar(16)",
+          "scanstate varchar(16)",
+          "muzzleid varchar(64)",
+          "info TEXT",
+          "PRIMARY KEY (label,voltage, resistor,scantype,scanstate)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectraprep",
+        "command": [
+          "sampleprep varchar(32)",
+          "prepcode char(1)",
+          "info TEXT",
+          "PRIMARY KEY (sampleprep)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "sampling",
+        "command": [
+          "label varchar(64)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "muzzletypes",
+        "command": [
+          "muzzle varchar(32)",
+          "muzzlecode char(2)",
+          "info TEXT",
+          "PRIMARY KEY (muzzle)"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "process": [
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "campaign"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "refspectra"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "auxiliary"
+      }
+    },
+    {
+      "processid": "createschema",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "process"
+      }
+    }
+  ]
+}

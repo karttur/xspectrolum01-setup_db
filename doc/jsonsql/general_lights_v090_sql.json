@@ -1,0 +1,80 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "singlelights",
+        "command": [
+          "lightid varchar(96)",
+          "lightuuid char(36) NOT NULL",
+          "source varchar(32)",
+          "product varchar(32)",
+          "model varchar(32)",
+          "spectrum varchar(32)",
+          "technology varchar(16)",
+          "minwl integer",
+          "maxwl integer",
+          "peakwl integer",
+          "url TEXT",
+          "info TEXT",
+          "PRIMARY KEY (lightid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "lightpower",
+        "command": [
+          "lightuuid char(36)",
+          "mvtyp integer",
+          "mvmin integer",
+          "mvmax integer",
+          "ma integer",
+          "PRIMARY KEY (lightuuid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "duallights",
+        "command": [
+          "lightuuid char(36) NOT NULL",
+          "lightuuid1 char(36)",
+          "lightuuid2 char(36)",
+          "lightid1 varchar(96)",
+          "lightid2 varchar(96)",
+          "PRIMARY KEY (lightuuid1, lightuuid2)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "lights",
+        "command": [
+          "lightuuid char(36)",
+          "lighttype char(1) NOT NULL",
+          "PRIMARY KEY (lightuuid)"
+        ]
+      }
+    }
+  ]
+}

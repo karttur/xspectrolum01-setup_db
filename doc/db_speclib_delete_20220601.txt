@@ -1,0 +1,3 @@
+# Delete the complete database
+jsonsql/db-delete_v090.json
+#

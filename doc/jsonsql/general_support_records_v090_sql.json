@@ -1,0 +1,344 @@
+{
+  "process": [
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectraunit",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'transmittance'",
+              "'transmittance of sample with given abundance (relative pressure, molality etc) and a path lenght'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectratype",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'transmittance'",
+              "'transmittance of sample with given abundance (relative pressure, molality etc) and a path length'"
+            ],
+            [
+              "'fluorescence'",
+              "'fluorescence'"
+            ],
+            [
+              "'reflectance'",
+              "'reflectance from solid sample'"
+            ],
+            [
+              "'raman'",
+              "'raman spectroscopy'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectrum",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'UV'",
+              "'Ultra violet'"
+            ],
+            [
+              "'VIS'",
+              "'Visible'"
+            ],
+            [
+              "'NIR'",
+              "'Near Infra Red'"
+            ],
+            [
+              "'MIR'",
+              "'Mid Infra Red'"
+            ],
+            [
+              "'NIRa'",
+              "'Near Infra Red A'"
+            ],
+            [
+              "'NIRb'",
+              "'Near Infra Red B'"
+            ],
+            [
+              "'NIRc'",
+              "'Near Infra Red C'"
+            ],
+            [
+              "'NIRd'",
+              "'Near Infra Red D'"
+            ],
+            [
+              "'NIRe'",
+              "'Near Infra Red E'"
+            ],
+            [
+              "'NIRf'",
+              "'Near Infra Red F'"
+            ],
+            [
+              "'UV-VIS'",
+              "'Ultra violett + visible'"
+            ],
+            [
+              "'VIS-NIR'",
+              "'Visible + Near Infra Red'"
+            ],
+            [
+              "'NIR-MIR'",
+              "'Near Infra Red + Mid infra red spectra'"
+            ],
+            [
+              "'UV-VIS-NIR'",
+              "'Ultra violett + visible + Near Infra Red'"
+            ],
+            [
+              "'VIS-NIR-MIR'",
+              "'Visible + Near Infra Red + Mid inrfa red spectra'"
+            ],
+            [
+              "'VIS-NIRa'",
+              "'visible + Near Infra Red A'"
+            ],
+            [
+              "'UV-VIS-NIRa'",
+              "'Ultra violett + visible + Near Infra Red A'"
+            ],
+            [
+              "'VIS-NIRa+NIRb'",
+              "'visible + Near Infra Red A + Near Infra Red B'"
+            ],
+            [
+              "'NIRa+NIRb-NIRc'",
+              "'Near Infra Red A + Near Infra Red B + Near Infra Red C'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "scanstate",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'gas'",
+              "'gaseous sample'"
+            ],
+            [
+              "'liquid'",
+              "'liquid sample'"
+            ],
+            [
+              "'solid'",
+              "'solid sample'"
+            ],
+            [
+              "'mixed'",
+              "'mixed sample'"
+            ],
+            [
+              "'flame'",
+              "'flame sample'"
+            ],
+            [
+              "'plasma'",
+              "'plasma sample'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "spectraprep",
+        "command": {
+          "columns": [
+            "sampleprep",
+            "prepcode",
+            "info"
+          ],
+          "values": [
+            [
+              "'insitu'",
+              "'x'",
+              "'no preparation and direct insitu sensing in the field'"
+            ],
+            [
+              "'insitu+dish'",
+              "'v'",
+              "'no preparation and insitu sensing with dish in the field'"
+            ],
+            [
+              "'wet+dish'",
+              "'u'",
+              "'no preparation and direct sensing on wet sample in dish'"
+            ],
+            [
+              "'direct'",
+              "'q'",
+              "'no preparation and direct sensing anywhere'"
+            ],
+            [
+              "'lab+none'",
+              "'p'",
+              "'no preparation and laboratory sensing direct on fresh sample'"
+            ],
+            [
+              "'lab+dish'",
+              "'o'",
+              "'no preparation and laboratory sensing direct using dish and fresh sample'"
+            ],
+            [
+              "'lab+cuvette'",
+              "'n'",
+              "'no preparation and laboratory sensing direct using cuvette'"
+            ],
+            [
+              "'lab+simpledry'",
+              "'m'",
+              "'simple drying before labtest direct on sample (no dish)'"
+            ],
+            [
+              "'lab+dish+simpledry'",
+              "'l'",
+              "'simple drying before labtest using dish'"
+            ],
+            [
+              "'lab+105dry'",
+              "'k'",
+              "'owen drying in 105 centrigrades before labtest direct on sample (no dish)'"
+            ],
+            [
+              "'lab+dish+105dry'",
+              "'j'",
+              "'owen drying in 105 centrigrades before labtest using dish'"
+            ],
+            [
+              "'lab+simpledry+crushed'",
+              "'i'",
+              "'simple drying and crushing before labtest direct on sample (no dish)'"
+            ],
+            [
+              "'lab+dish+simpledry+grinded'",
+              "'h'",
+              "'simple drying and grinding before labtest using dish'"
+            ],
+            [
+              "'lab+105dry+crushed'",
+              "'g'",
+              "'owen drying in 105 centrigrades and crushing before labtest direct on sample (no dish)'"
+            ],
+            [
+              "'lab+dish+105dry+grinded'",
+              "'f'",
+              "'owen drying in 105 centrigrades and grinding before labtest using dish'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "sampling",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'transmission'",
+              "'transmission sample with given abundance (relative pressure, molality etc) and a path lenght'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "support",
+        "table": "muzzletypes",
+        "command": {
+          "columns": [
+            "muzzle",
+            "muzzlecode",
+            "info"
+          ],
+          "values": [
+            [
+              "'soliddirect'",
+              "'s0'",
+              "'For direct diffuse spectroscopy, fluorecnce and Raman of undisturbed samples withou dish'"
+            ],
+            [
+              "'soliddish'",
+              "'s1'",
+              "'Solid dish for diffuse spectroscopy, fluorecnce and Raman of primariy grind samples'"
+            ],
+            [
+              "'cuvettetrans'",
+              "'c1'",
+              "'Cuvette with light source opposite spectral sensor, for transmissivity/absorbance'"
+            ],
+            [
+              "'cuvetteside'",
+              "'c2'",
+              "'cuvette with right angle light source, for fluorescence and Raman spectroscopy'"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

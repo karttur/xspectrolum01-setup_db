@@ -1,0 +1,27 @@
+{
+  "process": [
+    {
+      "processid": "grant",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "user": "xspetre",
+        "command": [
+          "GRANT USAGE ON SCHEMA process TO xspectre;",
+          "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA process TO xspectre;",
+          "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA process TO xspectre;",
+          "GRANT USAGE ON SCHEMA spectra TO xspectre;",
+          "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA spectra TO xspectre;",
+          "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA spectra TO xspectre;",
+          "GRANT USAGE ON SCHEMA sensor TO xspectre;",
+          "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA sensor TO xspectre;",
+          "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA sensor TO xspectre;",
+          "GRANT USAGE ON SCHEMA ancillary TO xspectre;",
+          "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA ancillary TO xspectre;",
+          "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA ancillary TO xspectre;"
+        ]
+      }
+    }
+  ]
+}

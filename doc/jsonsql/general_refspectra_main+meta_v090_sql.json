@@ -1,0 +1,71 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "refspectra",
+        "table": "spectra",
+        "command": [
+          "id bigint",
+          "wl real",
+          "value real",
+          "PRIMARY KEY (id, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "refspectra",
+        "table": "refspectrameta",
+        "command": [
+          "id BIGSERIAL",
+          "spectraid varchar(255)",
+          "source varchar(32)",
+          "substance varchar(64)",
+          "valueunit varchar(16)",
+          "scanstate varchar(8)",
+          "class varchar(32)",
+          "family varchar(32)",
+          "species varchar(32)",
+          "brand varchar(64)",
+          "version varchar(32)",
+          "sampling varchar(32)",
+          "spectrum varchar(16)",
+          "technology varchar(32)",
+          "minwl real",
+          "maxwl real",
+          "npoints smallint",
+          "fwhm real",
+          "info varchar (255)",
+          "PRIMARY KEY (id)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "refspectra",
+        "table": "transmissionmeta",
+        "command": [
+          "id bigint",
+          "solvent varchar(32)",
+          "abundanceunit varchar(16)",
+          "abundancesubstance real",
+          "abundancesolvent real",
+          "pathlength real",
+          "PRIMARY KEY (id)"
+        ]
+      }
+    }
+  ]
+}

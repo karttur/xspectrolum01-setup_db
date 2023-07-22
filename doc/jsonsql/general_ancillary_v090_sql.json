@@ -1,0 +1,95 @@
+{
+  "process": [
+
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "ancillary",
+        "table": "labsensing",
+        "command": [
+          "label varchar(64) NOT NULL",
+          "quantity varchar(32)",
+          "sensingunit varchar(32) NOT NULL",
+          "labobskey varchar(32) NOT NULL",
+          "PRIMARY KEY (labobskey)"
+        ]
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "ancillary",
+        "table": "labsensing",
+        "command": {
+          "columns": [
+            "label",
+            "quantity",
+            "sensingunit",
+            "labobskey"
+          ],
+          "values": [
+            [
+              "'Bulk density'",
+              "'density'",
+              "'g*mm-3'",
+              "'BD'"
+            ],
+            [
+              "'Loss-On-Ignition'",
+              "'organic matter content'",
+              "'percent'",
+              "'LOI'"
+            ]
+          ]
+        }
+      }
+    },
+
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "ancillary",
+        "table": "labobs",
+        "command": [
+          "labobsuuid char(36)",
+          "labobskey varchar(36)",
+          "meanvalue real",
+          "stdvalue real",
+          "PRIMARY KEY (labobsuuid, labobskey)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "ancillary",
+        "table": "labobsmeta",
+        "command": [
+          "sampleuuid char(36)",
+          "labobsuuid char(36) NOT NULL",
+          "subsample varchar(8) NOT NULL",
+          "depth smallint NOT NULL",
+          "prepcode char(2) NOT NULL",
+          "mode varchar(16) NOT NULL",
+          "obs varchar(8) NOT NULL",
+          "filename TEXT",
+          "obsdate date NOT NULL",
+          "createdate date",
+          "info TEXT",
+          "PRIMARY KEY (sampleuuid,prepcode,mode,obs,subsample,depth)"
+        ]
+      }
+    }
+  ]
+}

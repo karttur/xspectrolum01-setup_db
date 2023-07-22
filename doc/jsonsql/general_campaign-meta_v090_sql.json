@@ -1,0 +1,67 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "campaignmeta",
+        "command": [
+          "campaignuuid char(36)",
+          "insituprobing char(1) DEFAULT 'N'",
+          "inlabprobing char(1) DEFAULT 'N'",
+          "auxiliaryprobing char(1) DEFAULT 'N'",
+          "owner varchar(128)",
+          "campaignurl TEXT",
+          "licence varchar(64)",
+          "licenceurl varchar(255)",
+          "doi varchar(255)",
+          "contactname varchar(64)",
+          "contactemail varchar(255)",
+          "siteaddress varchar(255)",
+          "sitecountryiso char(2)",
+          "locationmethod varchar(16)",
+          "locationerror real",
+          "surveyortitle varchar(64)",
+          "surveyorcontact varchar(255)",
+          "surveyoremail varchar(255)",
+          "surveyoraddress varchar(255)",
+          "scantitle varchar(64)",
+          "scancontact varchar(255)",
+          "scanemail varchar(255)",
+          "scanaddress varchar(255)",
+          "PRIMARY KEY (campaignuuid)",
+          "createdate DATE"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "samplesymbol",
+        "command": [
+          "samplesymbolid varchar(128)",
+          "sampleuuid char(36)",
+          "samplesymboluuid char(36)",
+          "marker varchar(16)",
+          "aspatch varchar(1)",
+          "figure varchar(32)",
+          "size smallint",
+          "facecolor varchar(16)",
+          "linewidths smallint",
+          "linestyle varchar(8)",
+          "edgecolor varchar(16)",
+          "alpha smallint",
+          "PRIMARY KEY (sampleuuid)"
+        ]
+      }
+    }
+
+  ]
+}

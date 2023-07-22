@@ -1,0 +1,13 @@
+{
+  "userproject": {
+    "userid": "xspectre"
+  },
+  "process": [
+    {
+      "processid": "DeleteDatabase",
+      "overwrite": false,
+      "version": "0.9",
+      "verbose": 2
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "spectralsensors",
+        "command": [
+          "sensorid varchar(184)",
+          "sensorshortid varchar(32)",
+          "sensoruuid char(36)",
+          "source varchar(32)",
+          "product varchar(32)",
+          "model varchar(24)",
+          "serialnr varchar(16)",
+          "substance varchar(32) DEFAULT 'general'",
+          "bands smallint NOT NULL",
+          "maxdn smallint NOT NULL",
+          "type char(1)",
+          "spectrum varchar(32)",
+          "technology varchar(32)",
+          "url TEXT",
+          "info varchar(255)",
+          "PRIMARY KEY (sensorid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "singlespectra",
+        "command": [
+          "sensoruuid char(36)",
+          "wl real NOT NULL",
+          "fwhm real NOT NULL",
+          "PRIMARY KEY (sensoruuid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "multispectra",
+        "command": [
+          "sensoruuid char(36)",
+          "wl real NOT NULL",
+          "fwhm real NOT NULL",
+          "PRIMARY KEY (sensoruuid,wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "contspectra",
+        "command": [
+          "sensoruuid char(36)",
+          "minwl real NOT NULL",
+          "maxwl real NOT NULL",
+          "fwhm real NOT NULL",
+          "PRIMARY KEY (sensoruuid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "technology",
+        "command": [
+          "label varchar(64)",
+          "info TEXT",
+          "PRIMARY KEY (label)"
+        ]
+      }
+    },
+    {
+      "processid": "tableinsert",
+      "overwrite": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "technology",
+        "command": {
+          "columns": [
+            "label",
+            "info"
+          ],
+          "values": [
+            [
+              "'pyreosthinfilm'",
+              "'Pyreos thinfilm patented method'"
+            ],
+            [
+              "'grating'",
+              "'Grating based spectrometer'"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "probes",
+        "command": [
+          "probename varchar(32)",
+          "probeshortid varchar(16)",
+          "source varchar(32)",
+          "model varchar(32)",
+          "probeid varchar(96)",
+          "probeuuid char(36)",
+          "info TEXT",
+          "url TEXT",
+          "PRIMARY KEY (probeid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "probesensing",
+        "command": [
+          "probeuuid char(36)",
+          "label varchar(64) NOT NULL",
+          "quantity varchar(32)",
+          "sensingunit varchar(32) NOT NULL",
+          "sensingkey varchar(16) NOT NULL",
+          "PRIMARY KEY (probeuuid,quantity)"
+        ]
+      }
+    }
+  ]
+}

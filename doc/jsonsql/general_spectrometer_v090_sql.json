@@ -1,0 +1,202 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "muzzle",
+        "command": [
+          "muzzleid varchar(184)",
+          "muzzleuuid char(36)",
+          "muzzlecode char(2)",
+          "source varchar(32)",
+          "product varchar(32)",
+          "model varchar(24)",
+          "serialnr varchar(16)",
+          "lightuuid char(36)",
+          "info varchar (255)",
+          "url TEXT",
+          "PRIMARY KEY (muzzleid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "spectrometer",
+        "command": [
+          "spectrometerid varchar(184)",
+          "spectrometeruuid char(36)",
+          "spectrometer varchar(32)",
+          "source varchar(32)",
+          "product varchar(32)",
+          "model varchar(24)",
+          "serialnr varchar(16)",
+          "sensoruuid char(36)",
+          "info varchar (255)",
+          "url TEXT",
+          "PRIMARY KEY (spectrometerid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "spectromuzzle",
+        "command": [
+          "spectrometeruuid char(36)",
+          "muzzleuuid char(36)",
+          "referenceuuid char(36)",
+          "PRIMARY KEY (spectrometeruuid,muzzleuuid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "muzzlexposure",
+        "command": [
+          "muzzleuuid char(36)",
+          "mode varchar(16) DEFAULT 'default'",
+          "exposure smallint",
+          "PRIMARY KEY (muzzleuuid, mode)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "referencespectra",
+        "command": [
+          "referenceuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "darkmean real",
+          "darkstd real",
+          "PRIMARY KEY (referenceuuid, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "referencespectrameta",
+        "command": [
+          "spectrometeruuid char(36)",
+          "campaignuuid char(36)",
+          "referenceid varchar(32)",
+          "referenceuuid char(36) NOT NULL",
+          "factor real",
+          "mode varchar(16)",
+          "filename TEXT",
+          "createdate date",
+          "info TEXT",
+          "PRIMARY KEY (campaignuuid, referenceid)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "spectromuzzlereference",
+        "command": [
+          "referenceuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "darkmean real",
+          "darkstd real",
+          "PRIMARY KEY (referenceuuid, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "spectromuzzlereferencemeta",
+        "command": [
+          "spectrometeruuid char(36)",
+          "muzzleuuid char(36)",
+          "referenceuuid char(36) NOT NULL",
+          "referenceid varchar(36)",
+          "mode varchar(16)",
+          "factor real",
+          "filename TEXT",
+          "createdate date",
+          "PRIMARY KEY (spectrometeruuid, muzzleuuid, referenceid, mode)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "campaignreference",
+        "command": [
+          "referenceuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "darkmean real",
+          "darkstd real",
+          "PRIMARY KEY (referenceuuid, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "sensors",
+        "table": "campaignreferencemeta",
+        "command": [
+          "campaignuuid char(36)",
+          "referenceid varchar(32)",
+          "referenceuuid char(36) NOT NULL",
+          "factor real",
+          "filename TEXT",
+          "createdate date",
+          "info TEXT",
+          "PRIMARY KEY (campaignuuid, referenceid)"
+        ]
+      }
+    }
+  ]
+}

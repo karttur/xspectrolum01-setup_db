@@ -1,0 +1,85 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "spectrascan",
+        "command": [
+          "scanuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "darkmean real",
+          "darkstd real",
+          "PRIMARY KEY (scanuuid, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "spectrascanmeta",
+        "command": [
+          "sampleuuid char(36)",
+          "scanuuid char(36)",
+          "subsample varchar(8) NOT NULL",
+          "depth smallint NOT NULL",
+          "prepcode char(2) NOT NULL",
+          "mode varchar(16) NOT NULL",
+          "scan varchar(8) NOT NULL",
+          "localid smallint",
+          "filename TEXT",
+          "scandate date",
+          "createdate date",
+          "info TEXT",
+          "nafreq real",
+          "negfreq real",
+          "extfreq real",
+          "PRIMARY KEY (sampleuuid,prepcode,mode,scan,subsample,depth)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "reflectance",
+        "command": [
+          "scanuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "PRIMARY KEY (scanuuid, wl)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "reflectancederivative",
+        "command": [
+          "scanuuid char(36)",
+          "wl real",
+          "valuemean real",
+          "valuestd real",
+          "PRIMARY KEY (scanuuid, wl)"
+        ]
+      }
+    }
+  ]
+}

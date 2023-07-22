@@ -1,0 +1,47 @@
+{
+  "process": [
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "probeobs",
+        "command": [
+          "obsuuid char(36)",
+          "probesensor varchar(36)",
+          "meanvalue real",
+          "stdvalue real",
+          "PRIMARY KEY (obsuuid, probesensor)"
+        ]
+      }
+    },
+    {
+      "processid": "createtable",
+      "overwrite": false,
+      "delete": false,
+      "parameters": {
+        "db": "speclib",
+        "schema": "xspect",
+        "table": "probeobsmeta",
+        "command": [
+          "sampleuuid char(36)",
+          "probeuuid char(36) NOT NULL",
+          "obsuuid char(36) NOT NULL",
+          "subsample varchar(8) NOT NULL",
+          "depth smallint NOT NULL",
+          "prepcode char(2) NOT NULL",
+          "mode varchar(16) NOT NULL",
+          "obs varchar(8) NOT NULL",
+          "localid smallint",
+          "filename TEXT",
+          "obsdate date NOT NULL",
+          "createdate date",
+          "info TEXT",
+          "PRIMARY KEY (sampleuuid,probeuuid,prepcode,mode,obs,subsample,depth)"
+        ]
+      }
+    }
+  ]
+}
