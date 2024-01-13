@@ -9,7 +9,6 @@ xspectrolum spectral library is an attempt for semi-automated processing of spec
 The database setup (setup_db) package contains the processing for
 setting up the xspectrolum spectral library postgreSQL database. The package contains the following (**.py**) modules:
 
-
 - \_\_init.py\_\_
 - param_json_mini.py
 - setup\_db\_class.py
@@ -20,7 +19,7 @@ setting up the xspectrolum spectral library postgreSQL database. The package con
 
 The package is part of a larger superproject - xspectrolum. The package is built using Eclipse but can also be run stand alone.
 
-To run the package you must create a json file under your local user on the machine. The jsone file must be under the path ~/xspectrolum/xspectrolum/speclib_default.json:
+To run the package you must create a json file under your local user on the machine. The json file must be under the path ~/xspectrolum/xspectrolum/speclib_default.json:
 ```
 {
   "postgresdb": {
